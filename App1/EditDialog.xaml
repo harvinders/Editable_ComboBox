@@ -1,0 +1,21 @@
+﻿<ContentDialog
+    x:Class="App1.EditDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="TITLE"
+    PrimaryButtonText="Done"
+    SecondaryButtonText="Cancel">
+
+    <StackPanel>
+        <StackPanel>
+            <ComboBox x:Name="Combo3" IsEditable="True" ItemsSource="{x:Bind ViewModel.FontSizes}" Header="Font Size" Width="200" Loaded="Combo3_Loaded"  />
+            <TextBlock x:Name="Control3Output" Text="You can set the font size used for this text."
+                       FontFamily="Segoe UI" FontSize="{x:Bind (x:Double)Combo3.SelectedValue, Mode=OneWay}"/>
+        </StackPanel>
+
+    </StackPanel>
+</ContentDialog>
